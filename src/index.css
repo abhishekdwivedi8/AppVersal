@@ -1,0 +1,148 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Team Pulse Dashboard - Clean & Simple Design System */
+
+@layer base {
+  :root {
+    /* Cream Base Colors */
+    --background: 50 100% 98%; /* cream-50 #fffdf7 */
+    --foreground: 30 15% 25%;
+    
+    --card: 50 100% 98%; /* cream-50 */
+    --card-foreground: 30 15% 25%;
+    
+    --popover: 40 100% 96%; /* cream-100 */
+    --popover-foreground: 30 15% 25%;
+    
+    /* Brand Gold Colors */
+    --primary: 45 69% 52%; /* gold-500 #d4af37 */
+    --primary-foreground: 50 100% 98%;
+    
+    --secondary: 40 100% 96%; /* cream-100 */
+    --secondary-foreground: 45 69% 52%;
+    
+    --muted: 40 100% 90%; /* cream-200 */
+    --muted-foreground: 45 30% 45%;
+    
+    --accent: 45 97% 40%; /* gold-600 */
+    --accent-foreground: 50 100% 98%;
+    
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 50 100% 98%;
+    
+    --border: 40 100% 90%; /* cream-200 */
+    --input: 40 100% 90%;
+    --ring: 45 69% 52%;
+
+    --radius: 0.75rem; /* Clean rounded corners */
+    
+    /* Indian Inspired Colors */
+    --saffron: 30 100% 60%; /* #ff9933 */
+    --indian-green: 120 83% 29%; /* #138808 */
+    --indian-blue: 240 100% 25%; /* #000080 */
+    
+    /* Gold Variants */
+    --gold-light: 45 80% 65%; /* Lighter gold */
+    --gold-hover: 45 91% 33%; /* gold-700 #a16207 */
+    
+    /* Clean Shadows */
+    --shadow-sm: 0 1px 2px 0 hsl(var(--border) / 0.1);
+    --shadow-md: 0 4px 6px -1px hsl(var(--border) / 0.15);
+    --shadow-lg: 0 10px 15px -3px hsl(var(--border) / 0.2);
+    
+    /* Sidebar Colors */
+    --sidebar-background: 40 100% 96%; /* cream-100 */
+    --sidebar-foreground: 30 15% 25%;
+    --sidebar-primary: 45 69% 52%; /* gold-500 */
+    --sidebar-primary-foreground: 50 100% 98%;
+    --sidebar-accent: 45 97% 40%; /* gold-600 */
+    --sidebar-accent-foreground: 50 100% 98%;
+    --sidebar-border: 45 69% 52%; /* gold border */
+    --sidebar-ring: 45 69% 52%;
+  }
+
+  .dark {
+    /* Dark mode with warm tones */
+    --background: 30 15% 8%; 
+    --foreground: 50 100% 95%;
+    
+    --card: 30 15% 12%;
+    --card-foreground: 50 100% 95%;
+    
+    --popover: 30 15% 12%;
+    --popover-foreground: 50 100% 95%;
+    
+    --primary: 45 80% 65%; /* Brighter gold for dark mode */
+    --primary-foreground: 30 15% 8%;
+    
+    --secondary: 30 15% 15%;
+    --secondary-foreground: 50 100% 95%;
+    
+    --muted: 30 10% 20%;
+    --muted-foreground: 45 20% 65%;
+    
+    --accent: 45 80% 65%;
+    --accent-foreground: 30 15% 8%;
+    
+    --destructive: 0 62% 50%;
+    --destructive-foreground: 50 100% 98%;
+    
+    --border: 30 10% 25%;
+    --input: 30 10% 25%;
+    --ring: 45 80% 65%;
+    
+    --sidebar-background: 30 15% 10%;
+    --sidebar-foreground: 50 100% 95%;
+    --sidebar-primary: 45 80% 65%;
+    --sidebar-primary-foreground: 30 15% 8%;
+    --sidebar-accent: 45 70% 60%;
+    --sidebar-accent-foreground: 30 15% 8%;
+    --sidebar-border: 30 10% 25%;
+    --sidebar-ring: 45 80% 65%;
+  }
+}
+
+/* Clean Component Styles */
+@layer components {
+  /* Primary Button */
+  .btn-primary {
+    @apply bg-gradient-to-r from-primary to-accent text-primary-foreground rounded-xl;
+    @apply hover:shadow-md transition-all duration-200 ease-in-out;
+    @apply px-6 py-3 font-semibold;
+  }
+  
+  /* Status Card */
+  .status-card {
+    @apply bg-card border border-border shadow-md rounded-xl;
+    @apply hover:shadow-lg transition-shadow duration-200 p-6;
+  }
+  
+  /* Sidebar Active Item */
+  .sidebar-active {
+    @apply bg-gradient-to-r from-primary to-accent text-primary-foreground rounded-xl;
+    @apply shadow-sm border-primary;
+  }
+  
+  /* Clean hover effects */
+  .hover-lift {
+    @apply transition-all duration-200 hover:shadow-md hover:-translate-y-0.5;
+  }
+  
+  /* Status indicators */
+  .status-working { @apply bg-indian-green/20 text-indian-green border-indian-green/30; }
+  .status-break { @apply bg-saffron/20 text-saffron border-saffron/30; }
+  .status-meeting { @apply bg-indian-blue/20 text-indian-blue border-indian-blue/30; }
+  .status-offline { @apply bg-muted/50 text-muted-foreground border-muted; }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
